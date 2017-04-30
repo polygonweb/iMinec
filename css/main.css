@@ -1,0 +1,593 @@
+/**
+ * Шрифты
+ */
+
+@font-face {
+	font-family: 'PT Sans';
+	src: url('../fonts/ptsans/pts55f.eot');
+	src:
+		url('../fonts/ptsans/pts55f.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/ptsans/pts55f.woff') format('woff'),
+		url('../fonts/ptsans/pts55f.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'PT Sans';
+	src: url('../fonts/ptsans/pts56f.eot');
+	src:
+		url('../fonts/ptsans/pts56f.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/ptsans/pts56f.woff') format('woff'),
+		url('../fonts/ptsans/pts56f.ttf') format('truetype');
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'PT Sans';
+	src: url('../fonts/ptsans/pts75f.eot');
+	src:
+		url('../fonts/ptsans/pts75f.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/ptsans/pts75f.woff') format('woff'),
+		url('../fonts/ptsans/pts75f.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'PT Sans';
+	src: url('../fonts/ptsans/pts76f.eot');
+	src:
+		url('../fonts/ptsans/pts76f.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/ptsans/pts76f.woff') format('woff'),
+		url('../fonts/ptsans/pts76f.ttf') format('truetype');
+	font-weight: bold;
+	font-style: italic;
+}
+
+
+
+
+/**
+ * Базовые настройки страницы
+ */
+
+html, body {
+	height: 100%;
+}
+
+html {
+	min-width: 1200px;
+	font-family: "PT Sans", Arial, sans-serif;
+	font-size: 14px;
+	color: #5d5d5d;
+	background: #fbfbfb;
+}
+
+
+
+
+label {
+	cursor: pointer;
+}
+
+
+
+
+/**
+ * классы для лэйаута
+ */
+.cf {}
+	.cf:after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+
+.container {
+	padding-left: 32px;
+	padding-right: 32px;
+}
+
+
+
+
+/**
+ * кнопки
+ */
+
+.btn {
+	display: inline-block;
+	padding: 0 14px;
+	height: 30px;
+	font: 13px Arial, sans-serif;
+	line-height: 30px;
+	text-decoration: none;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+	color: inherit;
+	background: #e6e6e6;
+	-webkit-transition: all .12s;
+	   -moz-transition: all .12s;
+	     -o-transition: all .12s;
+	     -o-transition: all .12s;
+	        transition: all .12s;
+}
+	.btn:hover {
+		background: #f1f1f1;
+	}
+	.btn:active {
+		border-color: #adadad;
+		box-shadow: inset 0 3px 8px rgba(173, 173, 173, .5);
+	}
+
+
+/**
+ * таблицы
+ */
+
+.table {
+	width: 100%;
+}
+	.table tr {
+		border-bottom: 1px solid #e9ecf0;
+	}
+		.table tr td {
+			height: 16px;
+			padding-top: 8px;
+			padding-bottom: 8px;
+		}
+
+	.table .checkbox {
+		margin-right: 8px;
+	}
+
+
+
+
+/**
+ * список с выбором
+ */
+
+.select {
+	cursor: pointer;
+}
+	.select:after {
+		content: '';
+		display: inline-block;
+		vertical-align: middle;
+		border: 4px solid transparent;
+		border-top-color: inherit;
+		border-bottom: none;
+	}
+		.select__chosen {
+			border-bottom: 1px solid #aeaeae;
+		}
+
+
+
+
+/**
+ * чекбокс
+ */
+
+.checkbox {
+	display: inline-block;
+	vertical-align: middle;
+	cursor: pointer;
+}
+	.checkbox input[type="checkbox"] {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		margin: -1px;
+		padding: 0;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		border: 0;
+	}
+	.checkbox__fake {
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		border: 1px solid #E0E7EB;
+		border-radius: 2px;
+		background: #fcfcfc;
+	}
+
+	.checkbox:hover .checkbox__fake {
+		border-color: #0071bc;
+	}
+	.checkbox input[type="checkbox"]:checked + .checkbox__fake {
+		background: #0071bc;
+		border-color: #0071bc;
+	}
+
+
+
+
+/**
+ * шапка страницы
+ */
+
+.header {
+	height: 56px;
+	line-height: 56px;
+	background: #ededed;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+
+/**
+ * блок пользователя в шапке
+ */
+.header__user {
+	float: right;
+}
+
+
+/**
+ * блок пользователя
+ */
+.user {}
+	.user__block {
+		display: inline-block;
+		vertical-align: middle;
+	}
+	.user__name {}
+	.user__logout {}
+		.user__logout:before {
+			content: '';
+			margin-left: 8px;
+			display: inline-block;
+			vertical-align: sub;
+			font-size: 16px;
+			width:  1em;
+			height: 1em;
+			background: url("../img/logout-ico.png") no-repeat 0 0;
+			background-size: 2em 1em;
+		}
+			@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
+				.user__logout:before {
+					background-image: url("../img/logout-ico@2x.png");
+				}
+			}
+			.user__logout:hover:before {
+				background-position: -1em 0;
+			}
+
+
+/**
+ * лого
+ */
+.header__logo {
+	position: relative;
+	top: -3px;
+	margin-right: 28px;
+	display: inline-block;
+	vertical-align: middle;
+	width:  36px;
+	height: 40px;
+	background: url("../img/logo.png") no-repeat;
+	background-size: 100% 100%;
+}
+	@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
+		.header__logo {
+			background-image: url("../img/logo@2x.png");
+		}
+	}
+
+
+
+
+
+
+/**
+ * выбор катерогий программ в шапке
+ */
+
+.category {
+	position: relative;
+	z-index: 1;
+	display: inline-block;
+	vertical-align: middle;
+	cursor: pointer;
+}
+	.category__chosen {
+		font-size: 15px;
+	}
+		.category__chosen:after {
+			content: '';
+			margin-left: 6px;
+			display: inline-block;
+			vertical-align: middle;
+			border: 3px solid transparent;
+			border-top-width: 6px;
+			border-top-color:inherit;
+			border-bottom: none;
+		}
+	.category__list {
+		position: absolute;
+		z-index: 2;
+		right: 0;
+		top: 0;
+		padding: 0;
+		margin: -1px -386px 0 0;
+		width: 772px;
+		overflow: hidden;
+		list-style-type: none;
+		border: 1px solid #b3b3b3;
+		border-radius: 12px;
+		background: #fff;
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+		-webkit-transition: all .35s;
+		   -moz-transition: all .35s;
+		     -o-transition: all .35s;
+		        transition: all .35s;
+	}
+	.category:before {
+		content: '';
+		position: absolute;
+		z-index: 3;
+		top: 0;
+		right: 0;
+		margin-top: -11px;
+		margin-right: -10px;
+		display: inline-block;
+		width: 22px;
+		height: 11px;
+		opacity: 0;
+		visibility: hidden;
+		background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAALBAMAAACJ0mBNAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACpQTFRFAAAAs7S0////s7S0s7S0v8DAxcXFs7S0tre3uLm539/f6enp8fHx////zZQ2ywAAAAd0Uk5TABAQn8/Pzw47S24AAABPSURBVAjXY2AAARMBBhhg7nSEsy3XTIFJMM/ZexImYXl27x2oBPOcu3vvQiUszwLZEAmgMJB992QQRBjEvjNNASwMYt89acBQeRbKvjMdAIH+LjyhHgapAAAAAElFTkSuQmCC") no-repeat;
+		-webkit-transition: all .35s;
+		   -moz-transition: all .35s;
+		     -o-transition: all .35s;
+		        transition: all .35s;
+	}
+		.category:hover .category__list,
+		.category:hover:before {
+			top: 100%;
+			opacity: 1;
+			visibility: visible;
+			pointer-events: all;
+		}
+
+		.category__list-item {
+			position: relative;
+			float: left;
+			width: 50%;
+			height: 80px;
+			-webkit-box-sizing: border-box;
+			   -moz-box-sizing: border-box;
+			        box-sizing: border-box;
+			margin-bottom: -1px;
+			padding: 5px 24px 5px 100px;
+			text-decoration: none;
+			color: inherit;
+			border-bottom: 1px solid #ececec;
+			border-right: 1px solid #ececec;
+			-webkit-transition: all .5s;
+			   -moz-transition: all .5s;
+			     -o-transition: all .5s;
+			        transition: all .5s;
+		}
+			.category__list-item:after {
+				content: '';
+				display: block;
+				vertical-align: middle;
+				height: 100%;
+			}
+			.category__list-item:nth-child(odd) {
+				clear: both;
+				border-right: 1px solid #ececec;
+			}
+				.category__list-item:nth-child(even) {
+					
+				}
+				.category__list-item:hover {
+					background: #E6E6E6;
+					color:#1a1a1a;
+				}
+			.category__text {
+				overflow: hidden;
+				display: inline-block;
+				vertical-align: middle;
+				font-size: 13px;
+				line-height: normal;
+			}
+			.category__list-item:after {
+				content: '';
+				display: inline-block;
+				vertical-align: middle;
+				height: 100%;
+			}
+			.category__list-item:before {
+				content: '';
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 24px;
+				margin: auto;
+				display: inline-block;
+				font-size: 64px;
+				width:  1em;
+				height: 1em;
+				background: url("../img/category-icons.png") no-repeat;
+				background-size: 1em 11em;
+			}
+				@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
+					.category__list-item:before {
+						background-image: url("../img/category-icons@2x.png");
+					}
+				}
+				/* иконки для списка */
+				.category__list-item_realty:before {
+					background-position:0 0;
+				}
+				.category__list-item_specialists:before {
+					background-position: 0 -1em;
+				}
+				.category__list-item_gov:before {
+					background-position: 0 -2em;
+				}
+				.category__list-item_stat-info:before {
+					background-position: 0 -3em;
+				}
+				.category__list-item_business:before {
+					background-position: 0 -4em;
+				}
+				.category__list-item_fond:before {
+					background-position: 0 -5em;
+				}
+				.category__list-item_innov:before {
+					background-position: 0 -6em;
+				}
+				.category__list-item_skolkovo:before {
+					background-position: 0 -7em;
+				}
+				.category__list-item_control:before {
+					background-position: 0 -8em;
+				}
+				.category__list-item_strategic:before {
+					background-position: 0 -9em;
+				}
+				.category__list-item_cadaster:before {
+					background-position: 0 -10em;
+				}
+
+
+
+/**
+* tabs
+*/
+.tabs {}
+
+	.tab-bar {
+		background: #ededed;
+		border-bottom: 1px solid #ccc;
+	}
+		.tab-bar__list {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+		}
+		.tab-bar__item {
+			float: left;
+			height: 56px;
+			line-height: 56px;
+			border-left:  1px solid transparent;
+			border-right: 1px solid transparent;
+			-webkit-transition: background .3s ease-out;
+			   -moz-transition: background .3s ease-out;
+			     -o-transition: background .3s ease-out;
+			        transition: background .3s ease-out;
+		}
+			.tab-bar__item_active {
+				background: #fbfbfb;
+				border-left:  1px solid #ccc;
+				border-right: 1px solid #ccc;
+			}
+			.tab-bar__item:hover {
+				background: #fbfbfb;
+			}
+		.tab-bar__link {
+			display: block;
+			position: relative;
+			bottom: -1px;
+			padding: 0 32px;
+			color: #898989;
+			text-transform: uppercase;
+			text-decoration: none;
+		}
+			.tab-bar__item_active .tab-bar__link {
+				color: #0071bc;
+				background: #fbfbfb;
+			}
+
+			/**
+			* Иконки для вкладок
+			*/
+
+			.tab-bar__link:before {
+				content: '';
+				position: relative;
+				top: -2px;
+				display: inline-block;
+				vertical-align: middle;
+				margin-right: 10px;
+				font-size: 32px;
+				width:  1em;
+				height: 1em;
+				background: url("../img/tab-icons.png") no-repeat 0 0;
+				background-size: 6em 2em;
+			}
+				@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
+					background-image: url("../img/tab-icons@2x.png");
+				}
+				.tab-bar__item_overview .tab-bar__link:before {
+					background-position: 0 0;
+				}
+					.tab-bar__item_active.tab-bar__item_overview .tab-bar__link:before {
+						background-position: 0 -1em;
+					}
+				.tab-bar__item_status .tab-bar__link:before {
+					background-position: -1em 0;
+					top: 0;
+				}
+					.tab-bar__item_active.tab-bar__item_status .tab-bar__link:before {
+						background-position: -1em -1em;
+					}
+				.tab-bar__item_results .tab-bar__link:before {
+					background-position: -2em 0;
+				}
+					.tab-bar__item_active.tab-bar__item_results .tab-bar__link:before {
+						background-position: -2em -1em;
+					}
+				.tab-bar__item_manage .tab-bar__link:before {
+					background-position: -3em 0;
+				}
+					.tab-bar__item_active.tab-bar__item_manage .tab-bar__link:before {
+						background-position: -3em -1em;
+					}
+				.tab-bar__item_report .tab-bar__link:before {
+					background-position: -4em 0;
+				}
+					.tab-bar__item_active.tab-bar__item_report .tab-bar__link:before {
+						background-position: -4em -1em;
+					}
+				.tab-bar__item_admin .tab-bar__link:before {
+					background-position: -5em 0;
+				}
+					.tab-bar__item_active.tab-bar__item_admin .tab-bar__link:before {
+						background-position: -5em -1em;
+					}
+
+
+.tabs-content {}
+	.tabs-content__item {
+		display: none;
+		padding-top: 40px;
+	}
+		.tabs-content__item_active {
+			display: block;
+		}
+
+	.tabs-content__header {
+		padding-top: 8px;
+		padding-bottom: 8px;
+	}
+
+	.tabs-content__tools {
+		float: right;
+	}
+
+	.tabs-content__header-title {
+		float: left;
+	}
+
+	.tabs-content__header-select {
+		font: 20px Arial, sans-serif;
+	}
